@@ -13,7 +13,7 @@ export default function ButtonAppBar() {
       <AppBar position="static" style={{background:'#E89746', color:'#455A64'}}>
         <Toolbar>
           <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
-            <a href="/" style={{cursor:'pointer', textDecoration:'none', color:'#fff'}}>File Share</a>
+            <a href="/" style={{cursor:'pointer', textDecoration:'none', color:'#fff'}}>shareLink</a>
           </Typography>
         </Toolbar>
       </AppBar>

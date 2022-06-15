@@ -1,27 +1,23 @@
-/* button, input {
-    padding: 20px;
-    border-radius: 20px;
-    outline: none; 
+.card {
+  margin: 30px;
+  width: 60%;
+  height: 50%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  margin: 10px;
 }
 
-input {
-    cursor: default;
-    border: 5px solid #E89746;    
-    transition: all 0.3s ease-in-out;
+.displaylink{
+    border: 2px solid #000;
+    width: 70%;
+    display: block;
 }
 
-input:focus {
-    border-color: #E89746;    
-}
-
-button {
-    cursor: pointer;
-    color: #fff;
-    background: #E89746;
+input{
     border: none;
-    margin-left: 10px;
-    transition: all 0.3s ease-in-out;
+    width: max-content;
 }
-button:hover {
-    background: #E89746;
-} */
+
+button{
+    align-self: flex-end;
+}

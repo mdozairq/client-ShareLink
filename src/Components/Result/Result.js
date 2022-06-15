@@ -12,13 +12,14 @@ const Result = ({ downloadResponse }) => {
 
     return (
         <div
-            style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}
+            style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', }}
+            className="card"
         >
             <div>
                 <h1>Copy the generated link to share:</h1>
                 <p>size:{Math.round(downloadResponse.response.size / 1000)}kb</p>
             </div>
-            <div style={{ width: "100%" }}>
+            <div className='displaylink'>
                 <input
                     type="text"
                     id="copyText" value={downloadResponse.file} />
