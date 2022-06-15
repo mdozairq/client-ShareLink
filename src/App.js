@@ -1,23 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from 'react';
+import DragDrop from './Components/DragDrop/DragDrop';
+import Navbar from './Components/Navbar/Navbar'
+import { Container } from '@mui/material';
+import Result from './Components/Result/Result';
 
 function App() {
+  const [downloadResponse, setdownloadResponse] = useState();
+  const [phase, setPhase] = useState('init')
+
+
+  useEffect(() => {
+    if (downloadResponse) {
+      console.log(downloadResponse);
+      setPhase('result')
+    }
+  }, [downloadResponse])
+
+  const showContent = () => {
+    switch (phase) {
+      case "result":
+        return <Result downloadResponse={downloadResponse} />;
+
+      case "init":
+        return <DragDrop setdownloadResponse={setdownloadResponse} />;
+
+      default:
+        <DragDrop setdownloadResponse={setdownloadResponse} />
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <div style={{ display: "flex", justifyContent: "center", height: "100%", width:'100%' }}>
+        {showContent()}
+      </div>
     </div>
   );
 }

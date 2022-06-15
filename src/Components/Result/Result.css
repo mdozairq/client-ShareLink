@@ -1,0 +1,27 @@
+/* button, input {
+    padding: 20px;
+    border-radius: 20px;
+    outline: none; 
+}
+
+input {
+    cursor: default;
+    border: 5px solid #E89746;    
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus {
+    border-color: #E89746;    
+}
+
+button {
+    cursor: pointer;
+    color: #fff;
+    background: #E89746;
+    border: none;
+    margin-left: 10px;
+    transition: all 0.3s ease-in-out;
+}
+button:hover {
+    background: #E89746;
+} */
