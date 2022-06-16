@@ -19,15 +19,9 @@ const Result = ({ downloadResponse }) => {
                 <h1>Copy the generated link to share:</h1>
                 <p>size:{Math.round(downloadResponse.response.size / 1000)}kb</p>
             </div>
-            <div className='displaylink'>
-                <input
-                    type="text"
-                    id="copyText" value={downloadResponse.file} />
-                <button
-                    id="copyBtn"
-                    onClick={handleCopy}>
-                    <ContentCopyIcon />
-                </button>
+            <div className="input-container">
+                <input type="text" id="fileURL" value={downloadResponse.file} readonly />
+                <ContentCopyIcon className="cpybtn" onClick={handleCopy} />
             </div>
         </div>
     )

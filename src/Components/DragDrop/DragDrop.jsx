@@ -11,7 +11,7 @@ const DragDrop = ({ setdownloadResponse }) => {
   const [upload_status, setUploadStatus] = useState(false);
   const [errors, setErrors] = useState(false)
   const [files, setFiles] = useState([]);
-  const [progress, setProgress] = useState(0)
+  const [progress, setProgress] = useState()
 
   console.log(progress);
   const { getRootProps, getInputProps } = useDropzone({

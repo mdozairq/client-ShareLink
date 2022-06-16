@@ -7,17 +7,32 @@
   margin: 10px;
 }
 
-.displaylink{
-    border: 2px solid #000;
-    width: 70%;
-    display: block;
+.input-container {
+  display: flex;
+  position: relative;
+  width: 90%;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-input{
-    border: none;
-    width: max-content;
+input {
+  width: 100%;
+  border-radius: 3px;
+  padding: 10px 15px;
+  font-size: 20px;
+  border: 2px dashed var(--border-color);
+  border-radius: 6px;
+  background: #f5fcff;
+  color: #607d8b;
 }
 
-button{
-    align-self: flex-end;
+.cpybtn {
+  height: 22px;
+  width: 30px;
+  position: absolute;
+  right: 7px;
+  top: 12px;
+  cursor: pointer;
+  background: #f5fcff;
 }
