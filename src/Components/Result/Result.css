@@ -1,10 +1,12 @@
 .card {
+  display: flex;
   margin: 30px;
   width: 60%;
   height: 50%;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
   margin: 10px;
+  flex-direction: column;
 }
 
 .input-container {
@@ -35,4 +37,9 @@ input {
   top: 12px;
   cursor: pointer;
   background: #f5fcff;
+}
+
+img{
+  width: 60%;
+  height: 60%;
 }

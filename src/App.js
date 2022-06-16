@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <div style={{ display: "flex", justifyContent: "center", height: "100%", width:'100%' }}>
+      <div className='content'>
         {showContent()}
       </div>
     </div>

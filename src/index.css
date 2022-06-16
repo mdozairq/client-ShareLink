@@ -8,4 +8,5 @@ body {
   -moz-osx-font-smoothing: grayscale;
   display:inherit;
   overflow: hidden;
+  /* background-color: #bedaeb; */
 }

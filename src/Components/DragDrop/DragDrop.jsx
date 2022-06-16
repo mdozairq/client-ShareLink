@@ -6,6 +6,7 @@ import { useDropzone } from "react-dropzone";
 import upload_file_svg from "../../Assets/upload.svg"
 import Clouds from "../../Assets/upload_file_cloud.svg"
 import axiosInstance from '../../axios/axiosInstance';
+import './DragDrop.css'
 
 const DragDrop = ({ setdownloadResponse }) => {
   const [upload_status, setUploadStatus] = useState(false);
@@ -43,8 +44,8 @@ const DragDrop = ({ setdownloadResponse }) => {
           const progress = 50 + (progressEvent.loaded / progressEvent.total) * 50;
           console.log(progress);
           setProgress(progress);
-      }
-    }).then(res => setdownloadResponse(res.data)).catch(error => {
+        }
+      }).then(res => setdownloadResponse(res.data)).catch(error => {
         const { code } = error?.response?.data
         switch (code) {
           case "FILE_MISSING":
@@ -60,30 +61,14 @@ const DragDrop = ({ setdownloadResponse }) => {
 
   return (
     <div
-      style={{ display: 'flex', justifyContent: 'center', alignItems:'center' }}
+      className="card"
     >
       {upload_status ?
         (
-          <Container 
-          style={{
-            display: "flex",
-            justifyContent: "center",
-          }}>
+          <div className='dropzone'>
             <img src={Clouds} alt={"cloud"}
-              style={{
-                width: "80%",
-                height: "80%"
-              }}
             />
-            <div
-              style={{
-                position: "absolute",
-                width: "80%",
-                height: "30%",
-                top: "50%",
-                transform: "scale(0.8)"
-              }}
-            >
+            <div className='progress'>
               <Typography
                 variant='h6'
                 size="28px"
@@ -93,35 +78,30 @@ const DragDrop = ({ setdownloadResponse }) => {
               <br />
               {errors && <Alert severity="error">{errors}</Alert>}
               {!errors && progress && (
+                <div className='progress-bar'>
                 <LinearProgress variant="determinate"
                   value={progress}
                   sx={{
                     width: '100%', height: '20px', borderRadius: "5px",
                     '& .MuiLinearProgress-bar1Determinate': {
-                      backgroundColor: '#E89746',
+                      backgroundColor: '#8CC0DE',
                     }
                   }}
                 />
+                </div>
               )}
             </div>
-          </Container>
+          </div>
         )
         :
-        (<Container style={{
-          display: "flex",
-          justifyContent: "center",
-        }}>
-
+        (<div className='dropzone'>
           <div {...getRootProps({ className: 'dropzone' })}>
             <input {...getInputProps()} />
             <img src={upload_file_svg}
-              alt={"upload"}
-              style={{
-                width: "80%", height: "80%"
-              }}
-            />
+              alt={"upload"} />
           </div>
-        </Container>)
+        </div>
+        )
       }
     </div>
   );
