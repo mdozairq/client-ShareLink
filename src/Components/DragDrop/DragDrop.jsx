@@ -69,27 +69,27 @@ const DragDrop = ({ setdownloadResponse }) => {
             <img src={Clouds} alt={"cloud"}
             />
             <div className='progress'>
-              <Typography
-                variant='h6'
-                size="28px"
-              >
-                File upload progress
-              </Typography>
-              <br />
-              {errors && <Alert severity="error">{errors}</Alert>}
-              {!errors && progress && (
-                <div className='progress-bar'>
-                <LinearProgress variant="determinate"
-                  value={progress}
-                  sx={{
-                    width: '100%', height: '20px', borderRadius: "5px",
-                    '& .MuiLinearProgress-bar1Determinate': {
-                      backgroundColor: '#8CC0DE',
-                    }
-                  }}
-                />
-                </div>
-              )}
+              <div className='progress-bar'>
+                <Typography
+                  variant='h6'
+                  size="28px"
+                >
+                  File upload progress
+                </Typography>
+                <br />
+                {errors && <Alert severity="error">{errors}</Alert>}
+                {!errors && progress && (
+                  <LinearProgress variant="determinate"
+                    value={progress}
+                    sx={{
+                      width: '100%', height: '20px', borderRadius: "5px",
+                      '& .MuiLinearProgress-bar1Determinate': {
+                        backgroundColor: '#8CC0DE',
+                      }
+                    }}
+                  />
+                )}
+              </div>
             </div>
           </div>
         )

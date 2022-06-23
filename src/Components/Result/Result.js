@@ -1,6 +1,7 @@
 import React from 'react'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import downloadimg from '../../Assets/download-sd.svg'
+import downloadimg from '../../Assets/download-sd.svg';
+import { Button } from '@mui/material';
 import "./Result.css"
 
 const Result = ({ downloadResponse }) => {
@@ -11,12 +12,21 @@ const Result = ({ downloadResponse }) => {
         document.execCommand('copy');
     };
 
+    const sendWhatsApp = async () =>{
+        window.open(
+            `whatsapp://send?text=${downloadResponse.file}`,
+            // This is what makes it 
+            // open in a new window.
+            '_blank'
+        );
+    }
+
     return (
         <div
             className="card"
         >
             <div>
-                <img src={downloadimg} alt="download"/>
+                <img className="img" src={downloadimg} alt="download"/>
             </div>
             <div>
                 <h1>Your Download link is here:</h1>
@@ -26,6 +36,11 @@ const Result = ({ downloadResponse }) => {
                 <input type="text" id="copyText" value={downloadResponse.file} readonly />
                 <ContentCopyIcon className="cpybtn" onClick={handleCopy} />
             </div>
+            <div>
+                <Button variant="contained" onClick={sendWhatsApp} style={{marginRight:"25px", backgroundColor:"green"}}>Share on Whatsapp</Button>
+                <Button variant="outline">Share as Message</Button>
+            </div>
+
         </div>
     )
 }
