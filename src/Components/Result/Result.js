@@ -15,7 +15,7 @@ const Result = ({ downloadResponse }) => {
     const sendWhatsApp = async () => {
 
         window.open(
-            `https://api.whatsapp.com/send?text=Here+is+your+Download+Link+generated+by+ShareLink.in:+${downloadResponse.file}`,
+            `https://api.whatsapp.com/send?text=Here+is+your+Download+Link+generated+by+sharelinks.netlify.app:+${downloadResponse.file}`,
             // This is what makes it 
             // open in a new window.
             '_blank'
