@@ -12,9 +12,10 @@ const Result = ({ downloadResponse }) => {
         document.execCommand('copy');
     };
 
-    const sendWhatsApp = async () =>{
+    const sendWhatsApp = async () => {
+
         window.open(
-            `whatsapp://send?text=${downloadResponse.file}`,
+            `https://api.whatsapp.com/send?text=Here+is+your+Download+Link+generated+by+ShareLink.in:+${downloadResponse.file}`,
             // This is what makes it 
             // open in a new window.
             '_blank'
@@ -26,7 +27,7 @@ const Result = ({ downloadResponse }) => {
             className="card"
         >
             <div>
-                <img className="img" src={downloadimg} alt="download"/>
+                <img className="img" src={downloadimg} alt="download" />
             </div>
             <div>
                 <h1>Your Download link is here:</h1>
@@ -37,7 +38,7 @@ const Result = ({ downloadResponse }) => {
                 <ContentCopyIcon className="cpybtn" onClick={handleCopy} />
             </div>
             <div>
-                <Button variant="contained" onClick={sendWhatsApp} style={{marginRight:"25px", backgroundColor:"green"}}>Share on Whatsapp</Button>
+                <Button variant="contained" onClick={sendWhatsApp} style={{ marginRight: "25px", backgroundColor: "green" }}>Share on Whatsapp</Button>
                 <Button variant="outline">Share as Message</Button>
             </div>
 
